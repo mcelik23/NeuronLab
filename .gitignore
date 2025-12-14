@@ -1,0 +1,34 @@
+cat > .gitignore << 'EOF'
+# Tüm dosyaları ignore et
+*
+*/
+
+# Sadece bu klasörleri kabul et
+!forms/
+!src/
+!include/
+
+# Bu dosyaları kabul et
+!.gitignore
+!LICENSE
+!README.md
+!*.pro
+
+# Klasörlerin içinde sadece .cpp, .h ve .ui dosyalarını kabul et
+!forms/*.ui
+!src/*.cpp
+!include/*.h
+
+# Kesinlikle ignore edilecekler
+.qmake.stash
+Makefile
+*.o
+*.exe
+NeuoronLab
+moc_*
+ui_*.h
+ui_*.cpp
+*.pro.user*
+.github/
+screenshots/
+EOF
