@@ -9,6 +9,7 @@ cat > .gitignore << 'EOF'
 !include/
 
 # Bu dosyaları kabul et
+!screenshots
 !.gitignore
 !LICENSE
 !README.md
