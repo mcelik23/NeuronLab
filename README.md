@@ -6,7 +6,7 @@
 
 ---
 
-## 📸 Ekran Görüntüleri
+##  Ekran Görüntüleri
 
 <div align="center">
   <img src="screenshots/Single Layer Test.png" alt="Single Layer Test" width="700">
@@ -22,28 +22,28 @@
 
 ---
 
-## 🚀 Özellikler
+##  Özellikler
 
-* **🧠 Görsel Ağ Yapısı:** Nöronları, katmanları ve sinaptik bağlantıları gerçek zamanlı grafiksel olarak render eder.
-* **📉 Canlı Eğitim Grafiği:** Hata oranının (loss) zamanla değişimini anlık grafik üzerinde gösterir.
-* **⚡ Yüksek Performans:** C++ ve Qt altyapısı sayesinde optimize edilmiş hesaplama gücü.
-* **💻 Çapraz Platform:** Windows ve Linux (Ubuntu) üzerinde sorunsuz çalışır.
-* **📦 Kurulum Gerektirmez:** Portable (taşınabilir) yapıdadır; indirin ve direkt çalıştırın.
+* **Görsel Ağ Yapısı:** Nöronları, katmanları ve sinaptik bağlantıları gerçek zamanlı grafiksel olarak render eder.
+* **Canlı Eğitim Grafiği:** Hata oranının (loss) zamanla değişimini anlık grafik üzerinde gösterir.
+* **Yüksek Performans:** C++ ve Qt altyapısı sayesinde optimize edilmiş hesaplama gücü.
+* **Çapraz Platform:** Windows ve Linux (Ubuntu) üzerinde sorunsuz çalışır.
+* **Kurulum Gerektirmez:** Portable (taşınabilir) yapıdadır; indirin ve direkt çalıştırın.
 
 ---
 
-## 📥 İndir ve Çalıştır (Kurulumsuz)
+## İndir ve Çalıştır (Kurulumsuz)
 
 Projeyi derlemekle uğraşmadan, otomatik testlerden geçmiş hazır sürümleri **[Releases](https://github.com/mcelik23/NeuronLab/releases)** sayfasından indirebilirsiniz.
 
-### 🪟 Windows İçin
+### Windows İçin
 
 1.  **Releases** sayfasından `NeuoronLab-Windows-x86_64.zip` dosyasını indirin.
 2.  ZIP dosyasını klasöre çıkartın (**Önemli:** ZIP içinden çalıştırmayın, klasöre çıkartıp çalıştırın).
 3.  `NeuoronLab.exe` dosyasına çift tıklayarak çalıştırın.
     * *Not: Gerekli tüm Qt kütüphaneleri (DLL) paketin içine gömülmüştür.*
 
-### 🐧 Linux (Ubuntu/Debian) İçin
+### Linux (Ubuntu/Debian) İçin
 
 1.  **Releases** sayfasından `NeuoronLab-Linux-x86_64.tar.gz` dosyasını indirin.
 2.  Terminali açın ve dosyaları çıkartın:
@@ -61,7 +61,7 @@ Projeyi derlemekle uğraşmadan, otomatik testlerden geçmiş hazır sürümleri
 
 ---
 
-## 🛠️ Geliştiriciler İçin: Kaynak Koddan Derleme
+##  Geliştiriciler İçin: Kaynak Koddan Derleme
 
 Bu projeyi geliştirmek veya kaynak koddan derlemek isterseniz aşağıdaki adımları takip edebilirsiniz.
 
@@ -87,6 +87,6 @@ make -j4  # Windows için: mingw32-make
 
 ---
 
-## 📧 İletişim
+##  İletişim
 
 Sorularınız için issue açabilir veya benimle iletişime geçebilirsiniz.
