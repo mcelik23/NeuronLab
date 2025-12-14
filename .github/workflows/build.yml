@@ -1,0 +1,105 @@
+name: Build NeuronLab Final Release v2
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  # -------------------------------------------------------------------------
+  # LINUX BUILD (Aynen Kalıyor - Çalışıyor)
+  # -------------------------------------------------------------------------
+  build-linux:
+    name: Linux Build
+    runs-on: ubuntu-22.04
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Install Qt and dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools build-essential libgl1-mesa-dev
+    
+    - name: Build Project
+      run: |
+        mkdir build_linux
+        cd build_linux
+        qmake ../NeuoronLab.pro
+        make -j$(nproc)
+        
+        # Hazırlık
+        mkdir dist
+        cp NeuoronLab dist/
+        echo '#!/bin/bash' > dist/run.sh
+        echo 'export LD_LIBRARY_PATH=./lib:$LD_LIBRARY_PATH' >> dist/run.sh
+        echo './NeuoronLab "$@"' >> dist/run.sh
+        chmod +x dist/run.sh
+        chmod +x dist/NeuoronLab
+        tar -czf ../NeuoronLab-Linux-x86_64.tar.gz -C dist .
+
+    - name: Upload Linux Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: NeuoronLab-Linux
+        path: NeuoronLab-Linux-x86_64.tar.gz
+
+  # -------------------------------------------------------------------------
+  # WINDOWS BUILD (PAKETLEME ADIMI DÜZELTİLDİ)
+  # -------------------------------------------------------------------------
+  build-windows:
+    name: Windows Build
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v3
+      with:
+        version: '5.15.2'
+        host: 'windows'
+        target: 'desktop'
+        arch: 'win64_mingw81'
+    
+    # 1. DERLEME ADIMI (BASH - Build hatasız çalışıyordu, ellemiyoruz)
+    - name: Build Project
+      shell: bash
+      run: |
+        mkdir build_win
+        cd build_win
+        qmake ../NeuoronLab.pro -spec win32-g++ "CONFIG+=release"
+        mingw32-make
+        
+    # 2. PAKETLEME ADIMI (CMD - KRİTİK DÜZELTME)
+    # Bash yerine CMD kullanıyoruz ki 'windeployqt' yolları şaşırmasın.
+    - name: Package Windows
+      shell: cmd
+      run: |
+        :: Build klasörüne gir
+        cd build_win
+        
+        :: Release klasöründe exe oluştu mu kontrol et (Log için)
+        dir release
+        
+        :: KRİTİK NOKTA: windeployqt'yi release klasörüne girmeden, dışarıdan çağırıyoruz.
+        :: --dir release: DLL'leri release klasörüne at demektir.
+        :: --no-translations: Gereksiz dil dosyalarını atla (hata riskini azaltır).
+        windeployqt release\NeuoronLab.exe --dir release --no-translations --compiler-runtime
+        
+        :: Şimdi release klasörüne girip temizlik ve zipleme yapabiliriz
+        cd release
+        
+        :: Gereksiz derleme artıklarını sil
+        del *.o *.cpp *.h *.moc 2>NUL
+        
+        :: Ziple
+        7z a ..\..\NeuoronLab-Windows-x86_64.zip *
+
+    - name: Upload Windows Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: NeuoronLab-Windows
+        path: NeuoronLab-Windows-x86_64.zip
