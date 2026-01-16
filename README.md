@@ -31,13 +31,13 @@
 * **Kurulum Gerektirmez:** Portable (taşınabilir) yapıdadır; indirin ve direkt çalıştırın.
 
 ---
----
-## 🧠 MNIST Dataset Benchmark & Test Results
 
-NeuronLab, el yazısı rakam tanıma (MNIST) veri seti üzerinde test edilmiş ve yüksek doğruluk oranlarıyla doğrulanmıştır. Aşağıda, ağın eğitim sürecine dair kayıp (loss) grafiği ve farklı rakamlar üzerindeki çıkarım (inference) sonuçları yer almaktadır.
+## MNIST Dataset Benchmark & Test Results
+
+NeuronLab, el yazısı rakam tanıma (MNIST) veri seti üzerinde test edilmiş ve yüksek doğruluk oranlarıyla doğrulanmıştır. Aşağıda, ağın eğitim sürecine dair hata grafiği ve farklı rakamlar üzerindeki çıkarım sonuçları yer almaktadır.
 
 ### Eğitim Performansı (Loss Graph)
-Ağın öğrenme süreci boyunca hatanın (Error) minimize edilme aşaması aşağıda görselleştirilmiştir. Grafikteki düşüş, Backpropagation algoritmasının ve ağırlık güncellemelerinin kararlılığını göstermektedir.
+Ağın öğrenme süreci boyunca hatanın minimize edilme aşaması aşağıda görselleştirilmiştir. Grafikteki düşüş, Backpropagation algoritmasının ve ağırlık güncellemelerinin kararlılığını göstermektedir.
 
 <div align="center">
   <img src="screenshots/MNIST_train_loss_graph.png" alt="MNIST Training Loss" width="600">
