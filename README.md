@@ -22,6 +22,16 @@
 
 ---
 
+##  Özellikler
+
+* **Görsel Ağ Yapısı:** Nöronları, katmanları ve sinaptik bağlantıları gerçek zamanlı grafiksel olarak render eder.
+* **Canlı Eğitim Grafiği:** Hata oranının (loss) zamanla değişimini anlık grafik üzerinde gösterir.
+* **Yüksek Performans:** C++ ve Qt altyapısı sayesinde optimize edilmiş hesaplama gücü.
+* **Çapraz Platform:** Windows ve Linux (Ubuntu) üzerinde sorunsuz çalışır.
+* **Kurulum Gerektirmez:** Portable (taşınabilir) yapıdadır; indirin ve direkt çalıştırın.
+
+---
+
 ## 🧠 MNIST Dataset Benchmark & Test Results
 
 NeuronLab, el yazısı rakam tanıma (MNIST) veri seti üzerinde test edilmiş ve yüksek doğruluk oranlarıyla doğrulanmıştır. Aşağıda, ağın eğitim sürecine dair kayıp (loss) grafiği ve farklı rakamlar üzerindeki çıkarım (inference) sonuçları yer almaktadır.
@@ -45,16 +55,6 @@ Aşağıdaki tabloda, kullanıcı paneli üzerinden girilen farklı el yazısı 
 | ![4](screenshots/4.png) | ![8](screenshots/8.png) | ![9](screenshots/9.png) |
 
 > **Not:** Testler 28x28 piksel boyutundaki MNIST girdi formatına uygun olarak normalize edilmiş verilerle gerçekleştirilmiştir.
-
----
-
-##  Özellikler
-
-* **Görsel Ağ Yapısı:** Nöronları, katmanları ve sinaptik bağlantıları gerçek zamanlı grafiksel olarak render eder.
-* **Canlı Eğitim Grafiği:** Hata oranının (loss) zamanla değişimini anlık grafik üzerinde gösterir.
-* **Yüksek Performans:** C++ ve Qt altyapısı sayesinde optimize edilmiş hesaplama gücü.
-* **Çapraz Platform:** Windows ve Linux (Ubuntu) üzerinde sorunsuz çalışır.
-* **Kurulum Gerektirmez:** Portable (taşınabilir) yapıdadır; indirin ve direkt çalıştırın.
 
 ---
 
