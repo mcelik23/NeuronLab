@@ -31,6 +31,34 @@
 * **Kurulum Gerektirmez:** Portable (taşınabilir) yapıdadır; indirin ve direkt çalıştırın.
 
 ---
+---
+## 🧠 MNIST Dataset Benchmark & Test Results
+
+NeuronLab, el yazısı rakam tanıma (MNIST) veri seti üzerinde test edilmiş ve yüksek doğruluk oranlarıyla doğrulanmıştır. Aşağıda, ağın eğitim sürecine dair kayıp (loss) grafiği ve farklı rakamlar üzerindeki çıkarım (inference) sonuçları yer almaktadır.
+
+### Eğitim Performansı (Loss Graph)
+Ağın öğrenme süreci boyunca hatanın (Error) minimize edilme aşaması aşağıda görselleştirilmiştir. Grafikteki düşüş, Backpropagation algoritmasının ve ağırlık güncellemelerinin kararlılığını göstermektedir.
+
+<div align="center">
+  <img src="screenshots/MNIST_train_loss_graph.png" alt="MNIST Training Loss" width="600">
+</div>
+
+### Çıkarım (Inference) Örnekleri
+Aşağıdaki tabloda, kullanıcı paneli üzerinden girilen farklı el yazısı rakamların, eğitimli ağ tarafından gerçek zamanlı olarak nasıl sınıflandırıldığı görülmektedir:
+
+| Rakam: 1 | Rakam: 2 | Rakam: 3 |
+| :---: | :---: | :---: |
+| ![1](screenshots/1.png) | ![2](screenshots/2.png) | ![3](screenshots/3.png) |
+
+| Rakam: 4 | Rakam: 8 | Rakam: 9 |
+| :---: | :---: | :---: |
+| ![4](screenshots/4.png) | ![8](screenshots/8.png) | ![9](screenshots/9.png) |
+
+> **Not:** Testler 28x28 piksel boyutundaki MNIST girdi formatına uygun olarak normalize edilmiş verilerle gerçekleştirilmiştir.
+
+
+---
+
 
 ## İndir ve Çalıştır (Kurulumsuz)
 
