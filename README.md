@@ -22,6 +22,32 @@
 
 ---
 
+## 🧠 MNIST Dataset Benchmark & Test Results
+
+NeuronLab, el yazısı rakam tanıma (MNIST) veri seti üzerinde test edilmiş ve yüksek doğruluk oranlarıyla doğrulanmıştır. Aşağıda, ağın eğitim sürecine dair kayıp (loss) grafiği ve farklı rakamlar üzerindeki çıkarım (inference) sonuçları yer almaktadır.
+
+### Eğitim Performansı (Loss Graph)
+Ağın öğrenme süreci boyunca hatanın (Error) minimize edilme aşaması aşağıda görselleştirilmiştir. Grafikteki düşüş, Backpropagation algoritmasının ve ağırlık güncellemelerinin kararlılığını göstermektedir.
+
+<div align="center">
+  <img src="screenshots/MNIST_train_loss_graph.png" alt="MNIST Training Loss" width="600">
+</div>
+
+### Çıkarım (Inference) Örnekleri
+Aşağıdaki tabloda, kullanıcı paneli üzerinden girilen farklı el yazısı rakamların, eğitimli ağ tarafından gerçek zamanlı olarak nasıl sınıflandırıldığı görülmektedir:
+
+| Rakam: 1 | Rakam: 2 | Rakam: 3 |
+| :---: | :---: | :---: |
+| ![1](screenshots/1.png) | ![2](screenshots/2.png) | ![3](screenshots/3.png) |
+
+| Rakam: 4 | Rakam: 8 | Rakam: 9 |
+| :---: | :---: | :---: |
+| ![4](screenshots/4.png) | ![8](screenshots/8.png) | ![9](screenshots/9.png) |
+
+> **Not:** Testler 28x28 piksel boyutundaki MNIST girdi formatına uygun olarak normalize edilmiş verilerle gerçekleştirilmiştir.
+
+---
+
 ##  Özellikler
 
 * **Görsel Ağ Yapısı:** Nöronları, katmanları ve sinaptik bağlantıları gerçek zamanlı grafiksel olarak render eder.
@@ -49,32 +75,31 @@ Projeyi derlemekle uğraşmadan, otomatik testlerden geçmiş hazır sürümleri
 2.  Terminali açın ve dosyaları çıkartın:
 ```bash
     tar -xvzf NeuoronLab-Linux-x86_64.tar.gz
-```
-3.  Dosyaya çalıştırma izni verin:
-```bash
+Dosyaya çalıştırma izni verin:
+
+Bash
+
     chmod +x NeuoronLab
-```
-4.  Uygulamayı başlatın:
-```bash
+Uygulamayı başlatın:
+
+Bash
+
     ./NeuoronLab
-```
-
----
-
-##  Geliştiriciler İçin: Kaynak Koddan Derleme
-
+Geliştiriciler İçin: Kaynak Koddan Derleme
 Bu projeyi geliştirmek veya kaynak koddan derlemek isterseniz aşağıdaki adımları takip edebilirsiniz.
 
-### Gereksinimler
+Gereksinimler
+C++17 uyumlu derleyici (GCC, MinGW veya MSVC)
 
-* C++17 uyumlu derleyici (GCC, MinGW veya MSVC)
-* Qt 5.15 veya üzeri (Core, Gui, Widgets modülleri)
-* QMake
+Qt 5.15 veya üzeri (Core, Gui, Widgets modülleri)
 
-### Derleme Adımları
-```bash
+QMake
+
+Derleme Adımları
+Bash
+
 # 1. Repoyu klonlayın
-git clone https://github.com/mcelik23/NeuronLab.git
+git clone [https://github.com/mcelik23/NeuronLab.git](https://github.com/mcelik23/NeuronLab.git)
 cd NeuronLab
 
 # 2. Derleme klasörü oluşturun (Shadow Build)
@@ -83,10 +108,5 @@ mkdir build && cd build
 # 3. Projeyi hazırlayın ve derleyin
 qmake ../NeuoronLab.pro
 make -j4  # Windows için: mingw32-make
-```
-
----
-
-##  İletişim
-
+İletişim
 Sorularınız için issue açabilir veya benimle iletişime geçebilirsiniz.
